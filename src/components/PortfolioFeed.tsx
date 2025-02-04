@@ -18,6 +18,10 @@ interface Project {
     solution: string;
     impact: string[];
   };
+  externalLink?: {
+    title: string;
+    url: string;
+  };
 }
 
 const projects: Project[] = [
@@ -32,7 +36,7 @@ const projects: Project[] = [
       "https://pub-8ef4adb175e3459989097ebb94b40633.r2.dev/puentesfronterizos3.jpg",
       "https://pub-8ef4adb175e3459989097ebb94b40633.r2.dev/puentesfronterizos4.jpg"
     ],
-    tags: ["ISO 9001", "Data analysis", "Sentiment Analysis", "Decision Support"],
+    tags: ["Power BI", "FastAPI", "OpenAI", "Data analysis", "Sentiment Analysis", "Decision Support", "ISO 9001"],
     details: {
       challenge: "The Mexican government needed to meet ISO 9001 by analyzing the effectiveness of management systems across four transnational bridges between Ciudad Juarez and El Paso.",
       solution: "Analyzed survey data to assess user satisfaction and safety, developed a Power BI dashboard for decision-makers, and used AI-driven sentiment analysis to classify user feedback into complaints, suggestions, and concerns.",
@@ -52,7 +56,7 @@ const projects: Project[] = [
       "https://pub-8ef4adb175e3459989097ebb94b40633.r2.dev/sichitur3.jpg",
       "https://pub-8ef4adb175e3459989097ebb94b40633.r2.dev/sichitur4.jpg"
     ],
-    tags: ["Web Scraping", "Public Access", "Power BI", "Tourism data", "Sentiment Analysis", "Python"],
+    tags: ["Python", "Web Scraping", "Power BI", "Sentiment Analysis",  "Open Data"],
     details: {
       challenge: "The Tourism Department of Chihuahua needed a public platform to provide transparent access to tourism data, including visitor trends, economic impact, and social media insights.",
       solution: "Developed sichitur.com, a web platform with integrated Power BI dashboards, automated tourism data collection from flights, hotels, and social media, and performed sentiment analysis to provide public access to tourism KPI's.",
@@ -60,7 +64,11 @@ const projects: Project[] = [
         "Empowered government executives, businesses, and the public with data-driven insights for better planning.",
         "Provided data integration, enhancing tourism strategy based on visitor trends and economic impact."
       ]
-    }
+    },
+      externalLink : {
+        title: "Visit sichitur.com",
+        url: "https://sichitur.com"
+      }
   },
   {
     id: 3,
@@ -72,7 +80,7 @@ const projects: Project[] = [
       "https://pub-8ef4adb175e3459989097ebb94b40633.r2.dev/agentelibre2.jpg",
       "https://pub-8ef4adb175e3459989097ebb94b40633.r2.dev/agentelibre3.jpg"
     ],
-    tags: ["AI Matching", "Airflow", "Web Scraping", "Resume Optimization", "Supabase", "Python"],
+    tags: ["OpenAI Embeddings", "Airflow", "Web Scraping", "Supabase", "Cloud Flare", "Python", "Cosine Similarity"],
     details: {
       challenge: "With numerous job boards online, job seekers struggle to track openings across multiple platforms and identify opportunities that align with their skills and experience.",
       solution: "Developed Agente Libre, a web application that scrapes and enriches job listings daily, applies AI-powered resume matching to suggest relevant jobs, enables users to manage digital resumes, and provides automated alerts for top opportunities.",
@@ -80,6 +88,10 @@ const projects: Project[] = [
         "Simplifies job searching by centralizing listings from multiple sources and enhancing discovery through AI.",
         "Empowers job seekers with personalized recommendations, resume insights, and an easy-to-use platform tailored for remote work in Mexico."
       ]
+    },
+    externalLink : {
+      title: "Visit AgenteLibre.mx",
+      url: "https://www.agentelibre.mx"
     }
   },
   {
@@ -109,7 +121,7 @@ const projects: Project[] = [
     images: [
       "https://pub-8ef4adb175e3459989097ebb94b40633.r2.dev/chupacabras1.jpg"
     ],
-    tags: ["Power BI", "Process Automation", "Data Analysis", "Sponsorships", "Economic Impact"],
+    tags: ["Power BI", "Process Automation", "Data Analysis"],
     details: {
       challenge: "Organizers needed data-driven insights to demonstrate the event’s economic impact and participant experience, crucial for securing government permissions and sponsorships.",
       solution: "Conducted cyclist satisfaction and economic impact studies, and developed Power BI reports showcasing the event's value to stakeholders.",
@@ -118,6 +130,9 @@ const projects: Project[] = [
         "Provided sponsorship-attracting insights, highlighting visitor spending and participant engagement to bring in new partners.",
         "Saved 500+ man-hours annually by digitizing and streamlining survey processes, ensuring long-term sustainability for future volunteers."
       ]
+    }, externalLink : {
+      title: "Check out the Power BI Report delivered",
+      url: "https://app.powerbi.com/view?r=eyJrIjoiZDRmMmFjNzItZmViMi00MWFkLTk0ZWYtYjEwMzU3YjI0OGM5IiwidCI6ImUxYmE2Mzk1LTdhNjQtNGI5Mi1hYWYzLWE3YzAyMGMzZDE4ZiIsImMiOjR9"
     }
   },
   {
@@ -138,6 +153,9 @@ const projects: Project[] = [
         "Trained over 200 professionals for the Microsoft Power BI Data Analyst Associate certification.",
         "Strengthened Chihuahua’s workforce by increasing Power BI expertise in industries vital to the region’s economy."
       ]
+    },externalLink : {
+      title: "Enroll to free courses at ia.center",
+      url: "https://www.ia.center/es/"
     }
   }
 ];
@@ -280,6 +298,13 @@ const ProjectCard = ({ project }: { project: Project }) => {
                   ))}
                 </ul>
               </div>
+              {project.externalLink && (
+                <Button variant="link" className="flex items-center gap-2" asChild>
+                  <a href={project.externalLink.url} target="_blank" rel="noopener noreferrer">
+                    {project.externalLink.title}
+                  </a>
+                </Button>
+              )}
             </div>
           </div>
 
