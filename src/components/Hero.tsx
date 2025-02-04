@@ -139,7 +139,7 @@ const Hero = () => {
       />
       <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-4 text-center">
         <img
-          src="../public/profilepic.png"
+          src="https://pub-8ef4adb175e3459989097ebb94b40633.r2.dev/profilepic.jpg"
           alt="Isaac"
           className="mb-8 h-48 w-48 rounded-full border-4 border-primary object-cover shadow-lg"
         />
