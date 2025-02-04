@@ -251,7 +251,7 @@ const Portfolio = () => {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="mb-6 h-[300px] w-full rounded-lg object-cover"
+                    className="mb-1 h-[300px] w-full rounded-lg object-cover"
                   />
                 )}
 
