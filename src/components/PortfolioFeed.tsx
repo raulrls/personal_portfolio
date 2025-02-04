@@ -38,7 +38,7 @@ const projects: Project[] = [
     ],
     tags: ["Power BI", "FastAPI", "OpenAI", "Data analysis", "Sentiment Analysis", "Decision Support", "ISO 9001"],
     details: {
-      challenge: "The Mexican government needed to meet ISO 9001 by analyzing the effectiveness of management systems across four transnational bridges between Ciudad Juarez and El Paso.",
+      challenge: "The State Government of Chihuahua aimed to obtain ISO 9001certification, which required  the tracking, measurement, analysis, and evaluation of customer satisfaction and the effectiveness of the management system across three transnational bridges between Ciudad Juarez and El Paso. ",
       solution: "Analyzed survey data to assess user satisfaction and safety, developed a Power BI dashboard for decision-makers, and used AI-driven sentiment analysis to classify user feedback into complaints, suggestions, and concerns.",
       impact: [
         "Helped government executives identify and prioritize key infrastructure improvements based on data-driven recommendations.",
