@@ -212,9 +212,6 @@ const Portfolio = () => {
 
               {/* Modal Content */}
               <DialogContent className="sm:max-w-[700px]">
-                <DialogHeader>
-                  <DialogTitle>{project.title}</DialogTitle>
-                </DialogHeader>
 
                 {/* If multiple images exist -> show carousel. Else single image. */}
                 {project.details.images && project.details.images.length > 1 ? (
@@ -230,7 +227,7 @@ const Portfolio = () => {
                       }),
                     ]}
                   >
-                    <CarouselContent className="h-[300px]">
+                    <CarouselContent className="h-[250px]">
                       {project.details.images.map((imgSrc, idx) => (
                         <CarouselItem
                           key={idx}
@@ -259,22 +256,22 @@ const Portfolio = () => {
                 )}
 
                 {/* Remaining Project Details */}
-                <div className="space-y-6 mt-6">
+                <div className="space-y-3">
                   <div>
-                    <h4 className="mb-2 font-semibold">Challenge</h4>
+                    <h6 className="font-semibold">Challenge</h6>
                     <p className="text-sm text-muted-foreground">
                       {project.details.challenge}
                     </p>
                   </div>
                   <div>
-                    <h4 className="mb-2 font-semibold">Solution</h4>
+                    <h6 className="font-semibold">Solution</h6>
                     <p className="text-sm text-muted-foreground">
                       {project.details.solution}
                     </p>
                   </div>
                   <div>
-                    <h4 className="mb-2 font-semibold">Impact</h4>
-                    <ul className="list-inside list-disc space-y-1 text-sm text-muted-foreground">
+                    <h6 className="font-semibold">Impact</h6>
+                    <ul className="list-inside list-disc text-sm text-muted-foreground">
                       {project.details.impact.map((item, index) => (
                         <li key={index}>{item}</li>
                       ))}
