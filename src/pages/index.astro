@@ -1,0 +1,49 @@
+---
+import '@/styles/globals.css'
+import Layout from '../layouts/Layout.astro';
+import { Button } from "@/components/ui/button"
+import { MoonIcon, SunIcon } from "lucide-react"
+import Hero from '@/components/Hero';
+import About from '@/components/About';
+import Experience from '@/components/Experience';
+import Portfolio from '@/components/Portfolio';
+import Testimonials from '@/components/Testimonials';
+import Contact from '@/components/Contact';
+import Footer from '@/components/Footer';
+---
+
+<Layout title="Isaac Rosales - BI Specialist">
+  <main class="min-h-screen bg-background">
+    <div class="fixed top-4 right-4 z-50">
+      <Button variant="outline" size="icon" class="rounded-full" id="theme-toggle">
+        <SunIcon className="h-[2.2rem] w-[2.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+        <MoonIcon className="absolute h-[2.2rem] w-[2.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+        <span class="sr-only">Toggle theme</span>
+      </Button>
+    </div>
+    <Hero client:load />
+    <Experience client:visible />
+    <Portfolio client:visible />
+    <Footer client:visible />
+  </main>
+</Layout>
+
+<script>
+  const themeToggle = document.getElementById('theme-toggle');
+  
+  // Check for saved theme preference or default to dark theme
+  if (typeof localStorage !== 'undefined') {
+    if (!localStorage.getItem('theme')) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+  }
+
+  // Theme toggle functionality
+  themeToggle?.addEventListener('click', () => {
+    const isDark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+</script>
