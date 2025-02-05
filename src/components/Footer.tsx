@@ -45,7 +45,7 @@ const Footer = () => {
           <i>"A software artist transmutes the unseen into the undeniable"</i>
           </p>
           <div className="flex gap-4 font-semibold">
-            <a href="#privacy" className="hover:text-primary">
+            <a href="https://github.com/raulrls/personal_portfolio" className="hover:text-primary">
               Check out the code on Github
             </a>
           </div>
