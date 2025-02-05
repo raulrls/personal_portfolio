@@ -48,6 +48,7 @@ npm install
 ```sh
 npm run dev
 ```
+This will start a local development server, and you can preview the portfolio by opening http://localhost:3000 in your browser.
 
-##📜 License
+## 📜 License
 Feel free to use and modify this project! If you find it useful, a mention would be appreciated. 🚀
